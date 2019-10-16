@@ -9,7 +9,8 @@ export class Login extends Component {
     this.state = {
       username: '',
       password: '',
-      loggedInUser: ''
+      loggedInUser: '',
+      error: ''
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -24,7 +25,9 @@ export class Login extends Component {
       })
       console.log('res', res, this.state.loggedInUser)
     } catch (err) {
-      console.error('error', err)
+      this.setState({
+        error: 'Invalid Login'
+      })
     }
   }
 
@@ -42,6 +45,7 @@ export class Login extends Component {
       <LoginForm
         username={this.state.username}
         password={this.state.password}
+        error={this.state.error}
         handleSubmit={this.handleSubmit}
         handleChange={this.handleChange}
       />
