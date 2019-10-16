@@ -23,12 +23,15 @@ export class Login extends Component {
       this.setState({
         loggedInUser: res.username
       })
-      console.log('res', res, this.state.loggedInUser)
     } catch (err) {
       this.setState({
-        error: 'Invalid Login'
+        error: err.message
       })
     }
+    this.setState({
+      username: '',
+      password: ''
+    })
   }
 
   handleChange(e) {
