@@ -1,25 +1,15 @@
-import React from 'react';
+import React from 'react'
 
-export function LoginForm({username, password, handleSubmit}){
-  return <form onSubmit={handleSubmit}>
-    <label>
-      Username
-      </label>
-    <input 
-      type="text"
-      value={username}>
-    </input>
+export function LoginForm({ username, password, handleSubmit, handleChange }) {
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>Username</label>
+      <input type="text" value={username} onChange={handleChange} name="username"></input>
 
+      <label>Password</label>
+      <input onChange={handleChange} type="password" value={password} name="password"></input>
 
-    <label>
-      Password
-      </label>
-    <input 
-      type="password"
-      value={password}>
-    </input>
-
-    <button type="submit">Submit</button>
-
-  </form>
+      <button type="submit">Submit</button>
+    </form>
+  )
 }

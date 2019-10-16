@@ -1,5 +1,10 @@
-import React from 'react';
+import React from 'react'
 
-export function WelcomeText(){
-  return <h1>test welcome</h1>
+export function WelcomeText({ user, handleClick }) {
+  return (
+    <div>
+      <h1>Welcome, {user}</h1>
+      <button onClick={handleClick}>Logout</button>
+    </div>
+  )
 }
