@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { LoginForm } from './LoginForm'
 import { login } from '../lib/api'
-import { Welcome } from '../Welcome/Welcome'
+import { Secure } from '../Secure/Secure'
 
 export class Login extends Component {
   constructor() {
@@ -42,7 +42,7 @@ export class Login extends Component {
 
   render() {
     if (this.state.loggedInUser) {
-      return <Welcome user={this.state.loggedInUser} />
+      return <Secure user={this.state.loggedInUser} />
     }
     return (
       <LoginForm

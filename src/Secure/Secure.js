@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { WelcomeText } from './WelcomeText'
+import { SecureText } from './SecureText'
 import { Login } from '../Login/Login'
 
-export class Welcome extends Component {
+export class Secure extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -11,7 +11,7 @@ export class Welcome extends Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick(e) {
+  handleClick() {
     this.setState({
       clicked: true
     })
@@ -21,6 +21,6 @@ export class Welcome extends Component {
     if (this.state.clicked) {
       return <Login />
     }
-    return <WelcomeText handleClick={this.handleClick} user={this.props.user} />
+    return <SecureText handleClick={this.handleClick} user={this.props.user} />
   }
 }
